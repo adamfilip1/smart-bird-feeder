@@ -1,5 +1,6 @@
 
 https://github.com/user-attachments/assets/3aae03ff-7ea2-4fea-a6bc-3823146744d2
+
 # Smart Bird Feeder
 
 Group project developed at **Unicorn University** combining IoT hardware with a React web app.  
