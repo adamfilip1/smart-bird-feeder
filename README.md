@@ -9,14 +9,14 @@ Hardware uses a **Hardwario Core Module** with a built-in accelerometer; data fl
 I Focused on microcontroller programming and stable communication between hardware and cloud.
 
 
-## ✨ Features
+## Features
 - Microcontroller on **Hardwario Core Module** (accelerometer X/Y/Z).
 - Real-time data transfer via **Node-RED** gateway.
 - **React** web app with login and **multiple feeders per account**.
 - **Activity charts** based on accelerometer events.
 - **Discord notifications** when motion is detected.
 
-## 🧭 Architecture (high level)
+## Architecture (high level)
 Hardwario Core (accelerometer) → Node-RED (cloud gateway) → REST/Webhook → React app (charts, auth, alerts).
 
 ##Demo Mode
