@@ -1,70 +1,29 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/user-attachments/assets/3aae03ff-7ea2-4fea-a6bc-3823146744d2
+# Smart Bird Feeder
 
-## Available Scripts
+Group project developed at **Unicorn University** combining IoT hardware with a React web app.  
+Hardware uses a **Hardwario Core Module** with a built-in accelerometer; data flows via a **Node-RED gateway** to the cloud. The web app provides multi-feeder accounts, activity graphs, and Discord alerts.
 
-In the project directory, you can run:
+I Focused on microcontroller programming and stable communication between hardware and cloud.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
+- Microcontroller on **Hardwario Core Module** (accelerometer X/Y/Z).
+- Real-time data transfer via **Node-RED** gateway.
+- **React** web app with login and **multiple feeders per account**.
+- **Activity charts** based on accelerometer events.
+- **Discord notifications** when motion is detected.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧭 Architecture (high level)
+Hardwario Core (accelerometer) → Node-RED (cloud gateway) → REST/Webhook → React app (charts, auth, alerts).
 
-### `npm test`
+##Demo Mode
+The app runs in **demo mode** (demo accounts and statistics for illustration) when: REACT_APP_DEMO=1
+In demo mode:
+Login is not validated against the backend.
+Data is simulated for demonstration.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App runs on http://localhost:3000.
+Run:
+  npm start
