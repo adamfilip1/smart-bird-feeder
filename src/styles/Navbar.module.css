@@ -1,0 +1,32 @@
+.appBar {
+  background-color: #1976d2;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.authButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.modalBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #212121;
+  color: #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.6);
+  padding: 32px;
+  width: 300px;
+}
