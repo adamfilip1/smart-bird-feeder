@@ -1,0 +1,55 @@
+úterý 1. dubna 2025
+IoT Node Dokumentace
+1. Module
+- Tento IoT Node je postaven na platformě HARDWARIO Core Module a
+slouží k monitorování teploty, detekci pohybu a reakci na stisk tlačítka.
+2. Použité komponenty
+Komponenta Popis
+Hardwario Core Module Hlavní mikrokontrolér
+TMP112 Digitální teplotní senzor (I2C)
+LIS2DH12 3-osý akcelerometr (I2C)
+Tlačítko Mechanické tlačítko pro vstup uživatele
+LED Indikační dioda
+Baterie (modul) Modul pro měření napětí baterie
+3. Logika firmware
+Tlačítko
+• Krátký stisk: zveřejní události push_button s počtem kliknutí.
+• Dlouhý stisk: zveřejní události hold_button, při uvolnění i délku stisku.
+• Speciální délka stisku: restartuje zařízení.
+Teplota
+• (TMP112)Měření každých 10 sekund (nebo 1 sekunda v servisním režimu).
+• Pokud se teplota změní o více než 0.2 °C, nebo uplyne 15 minut, odesílá se
+přes radio (temperature).
+Akcelerometr
+1
+• (LIS2DH12)Pravidelné aktualizace a vyhodnocení změny orientace
+(orientation).
+• Alarm se spustí, pokud hodnota na ose Z překročí 0.25g. Pak se zveřejní
+accelerometer_alert.
+Baterie
+• Napětí baterie se kontroluje každou hodinu a hodnoty se odesílají přes
+radio (battery).
+4. Komunikace
+• Kabelová komunikace přes UART (USB)
+• Data jsou odesílána sériově přes UART do Gateway, která je přijímá
+pomocí node-red-node-serialport
+• Intervaly:
+• Teplota:
+• Měří se každých 10 sekund
+• Publikace probíhá každých 15 minut, nebo když rozdíl teploty dosáhne
+0.2°C
+• Akcelerometr
+• Měří se každých 10 sekund
+• Publikace probíhá při změně polohy
+• Baterie
+• Každou hodinu
+• Tlačítko
+• Odesílá se okamžitě
+5. Chování při problémech
+• Chyby senzorů logovány přes twr_log_error
+2
+• Při selhání aktualizace teploty nebo akcelerometru je vyvolána chybová
+událost
+6. Poznámky
+• Použitý TWR framework (HARDWARIO SDK)
+3
